@@ -1,17 +1,15 @@
 'use strict';
 
-/***
- 
- * @return {function}
- */
-function makeInfinityAdder() {
+//  * @return {function}
+//  */
+function makeAdder() {
   let count = 0;
 
-  function makeAdder(...args) {
+  function adder(...args) {
     if (args.length > 0) {
       count += args[0];
 
-      return makeAdder;
+      return adder;
     } else {
       const result = count;
 
@@ -21,7 +19,7 @@ function makeInfinityAdder() {
     }
   }
 
-  return makeAdder;
+  return adder;
 }
 
-module.exports = makeInfinityAdder;
+module.exports = makeAdder;
